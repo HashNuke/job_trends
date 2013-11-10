@@ -1,8 +1,8 @@
-Dynamo.under_test(StackAnalysis.Dynamo)
+Dynamo.under_test(JobTrends.Dynamo)
 Dynamo.Loader.enable
 ExUnit.start
 
-defmodule StackAnalysis.TestCase do
+defmodule JobTrends.TestCase do
   use ExUnit.CaseTemplate
 
   # Enable code reloading on test cases

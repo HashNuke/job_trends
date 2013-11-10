@@ -1,4 +1,4 @@
-defmodule StackAnalysis do
+defmodule JobTrends do
   use Application.Behaviour
 
   @doc """
@@ -6,6 +6,6 @@ defmodule StackAnalysis do
   application and its Dynamos.
   """
   def start(_type, _args) do
-    StackAnalysis.Dynamo.start_link([max_restarts: 5, max_seconds: 5])
+    JobTrends.Supervisor.start_link
   end
 end

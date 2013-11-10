@@ -1,4 +1,4 @@
-defmodule StackAnalysis.Dynamo do
+defmodule JobTrends.Dynamo do
   use Dynamo
 
   config :dynamo,
@@ -6,7 +6,7 @@ defmodule StackAnalysis.Dynamo do
     env: Mix.env,
 
     # The OTP application associated with this Dynamo
-    otp_app: :stack_analysis,
+    otp_app: :job_trends,
 
     # The endpoint to dispatch requests to
     endpoint: ApplicationRouter,
@@ -19,7 +19,7 @@ defmodule StackAnalysis.Dynamo do
   # config :dynamo,
   #   session_store: Session.CookieStore,
   #   session_options:
-  #     [ key: "_stack_analysis_session",
+  #     [ key: "_job_trends_session",
   #       secret: "q10iQIoZvR3Ga1J0BPnUZIUN0HpNDKvIhiVyk0kHfbrdWudLDPU9v+wItmFeSp/L"]
 
   # Default functionality available in templates
