@@ -18,10 +18,7 @@ defmodule ApplicationRouter do
   post "/api/jobs" do
     raw_data = conn.params["job"] |> :jsx.decode
     data = []
-
-    # For locations, send an array of dicts with each having
-    # "latitude", "longitude" and country code as "country"
-    fields = ["title", "description", "date", "locations", "source"]
+    fields = ["title", "description", "date", "locations", "source", "url"]
 
     json = parse_job_params(fields, [], raw_data) |> :jsx.encode
 

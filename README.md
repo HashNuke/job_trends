@@ -2,6 +2,8 @@
 
 Job trends application in Elixir using the Dynamo framework
 
+## Setup
+
 ### Installation
 
 Requires Elixir and Riak to be installed. Once done, copy-paste the following in your terminal.
@@ -20,14 +22,46 @@ In the console after starting the server, run the following:
 
     :application.set_env(:job_trends, :api_key, "some_random_string")
 
-### Data sources
+## API
 
-TODO decide later
+To API calls add the param `token` with the API key
 
-#### Job sites to parse
+### POST `/api/jobs`
 
-* Github Jobs
-* Stackoverflow Careers
-* HasGeek Job board
-* 37signals job board
-* Hacker News “Who’s Hiring?” threads
+Adds a job. Post a param called `job` with the job data encoded in json.
+
+The json can have the following fields:
+
+* `title` - job title
+* `description` - job description
+* `date` - date the job was posted, as an integer in YYYYMMDD format
+* `source` - Code name of the job site (refer below in the "Data Sources" section for code names).
+* `url` - full url of the job post
+* `locations` - an array of dicts with the params "latitude", "longitude" and "country" (country code of the country)
+
+Here's some valid json for the job
+
+    {
+      "title": "Chopstick programmer",
+      "description": "Must know how to use chopsticks. Bonus: Must know how to walk using chopsticks",
+      "data": 20131124,
+      "source": "ghj",
+      "url": "http://jobs.github.com/jobs/chopstick-programmer",
+      locations: [
+        {"country": "IN", "latitude": 34.155, "longitude": 75.162},
+        {"country": "US", "latitude": 45.152, "longitude": 15.3415}
+      ]
+    }
+
+
+## Data sources
+
+TODO for list of tools or languages decide later
+
+### Job sites to parse (and their code names used in the database)
+
+* Github Jobs (ghj)
+* Stackoverflow Careers (soc)
+* HasGeek Job board = (hjb)
+* 37signals job board (37jb)
+* Hacker News “Who’s Hiring?” threads (hnwh)
