@@ -53,6 +53,7 @@ Here's some valid json for the job
       ]
     }
 
+On success will return json of the form `{"ok": "3kgdsn328wefb34f"}`. The value of the `ok` key will be the job ID in the database.
 
 ## Data sources
 
