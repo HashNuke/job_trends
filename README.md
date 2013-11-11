@@ -37,7 +37,7 @@ The json can have the following fields:
 * `date` - date the job was posted, as an integer in YYYYMMDD format
 * `source` - Code name of the job site (refer below in the "Data Sources" section for code names).
 * `url` - full url of the job post
-* `locations` - an array of dicts with the params "latitude", "longitude" and "country" (country code of the country)
+* `locations` - an array of json objects with the keys `latitude`, `longitude` and `country` (country code of the country)
 
 Here's some valid json for the job
 
@@ -61,8 +61,8 @@ TODO for list of tools or languages decide later
 
 ### Job sites to parse (and their code names used in the database)
 
-* Github Jobs (ghj)
-* Stackoverflow Careers (soc)
-* HasGeek Job board = (hjb)
-* 37signals job board (37jb)
-* Hacker News “Who’s Hiring?” threads (hnwh)
+* Github Jobs (`ghj`)
+* Stackoverflow Careers (`soc`)
+* HasGeek Job board (`hjb`)
+* 37signals job board (`37jb`)
+* Hacker News “Who’s Hiring?” threads (`hnwh`)
