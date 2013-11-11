@@ -16,6 +16,8 @@ To start the server, first start Riak, using `riak start`
 
 Then run `iex -S mix server` to start the server and the console. The application will now be accessible at `http://localhost:4000`
 
+To quit the server and the console, press ctrl+c, then enter "a" for abort.
+
 ### Setting API key
 
 In the console after starting the server, run the following:
